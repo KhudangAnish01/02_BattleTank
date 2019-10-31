@@ -24,4 +24,7 @@ public:
 	//start the tank's barrel so that shot will hit where its
 	//crosshair intersect with world
 	void AimTowardsCrossHair();
+
+	//return an out parameter,true if it hit landscpae
+	bool GetSightRayHitLoction(FVector& OutHitLocation);
 };
