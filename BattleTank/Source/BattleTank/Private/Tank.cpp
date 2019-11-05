@@ -13,6 +13,11 @@ ATank::ATank()
 	TankAmingComponent = CreateDefaultSubobject<UTankAmingComponent>(FName("Amming Component"));
 }
 
+void ATank::SetBarrelReference(UStaticMeshComponent* BarrelToSet)
+{
+	TankAmingComponent->SetBarrelReference(BarrelToSet);
+}
+
 // Called when the game starts or when spawned
 void ATank::BeginPlay()
 {

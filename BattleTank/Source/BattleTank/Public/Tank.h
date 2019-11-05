@@ -17,6 +17,9 @@ public:
 
 	void AimAt(FVector HitLocation);
 
+	UFUNCTION(BluePrintCallable, Category= Setup)
+	void SetBarrelReference(UStaticMeshComponent* BarrelToSet);
+
 protected:
 	UTankAmingComponent* TankAmingComponent = nullptr;
 
