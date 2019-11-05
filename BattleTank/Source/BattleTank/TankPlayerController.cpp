@@ -24,7 +24,7 @@ void ATankPlayerController::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 	AimTowardsCrossHair();
-	UE_LOG(LogTemp, Warning, TEXT("Player controller ticking"));
+	//UE_LOG(LogTemp, Warning, TEXT("Player controller ticking"));
 }
 
 
@@ -40,10 +40,9 @@ void  ATankPlayerController::AimTowardsCrossHair()
 
 	if (GetSightRayHitLoction(HitLocation))//has a "side-effect", is going to ine trace
 	{
-		UE_LOG(LogTemp, Warning, TEXT("HitLocation: %s"), *HitLocation.ToString());
-		//TODO Tell controlled tank to aim at this point
+		GetControlledTank()->AimAt(HitLocation);
 	}
-	}
+}
 	
 //get world location if Linetrace through crossbar,true if it ht landscape
 bool ATankPlayerController::GetSightRayHitLoction(FVector& HitLocation)
@@ -89,6 +88,5 @@ bool ATankPlayerController::GetLookDirection(FVector2D ScreenLocation, FVector& 
 		ScreenLocation.X,
 		ScreenLocation.Y,
 		CameraWorldLocation, LookDirection);
-
 	return true;
 }
