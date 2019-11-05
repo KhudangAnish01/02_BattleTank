@@ -1,6 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
+
+#include "C:/Users/Hp/OneDrive/Documents/02_BattleTank/BattleTank/Source/BattleTank/Public/TankAmingComponent.h"
 #include "BattleTankGameModeBase.h"
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
@@ -14,6 +16,9 @@ class BATTLETANK_API ATank : public APawn
 public:
 
 	void AimAt(FVector HitLocation);
+
+protected:
+	UTankAmingComponent* TankAmingComponent = nullptr;
 
 private:
 	// Sets default values for this pawn's properties
